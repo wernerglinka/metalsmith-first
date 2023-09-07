@@ -1,4 +1,6 @@
-![alt text](https://github.com/wernerglinka/metalsmith-first/blob/main/msfirst.png?raw=true)
+<p align="center">
+  <img alt="Metalsmith First" src="https://github.com/wernerglinka/metalsmith-first/blob/main/msfirst.png?raw=true" width="100" />
+</p>
 
 <h1 align="center">Metalsmith First</h1>
   
