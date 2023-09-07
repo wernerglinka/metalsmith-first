@@ -1,0 +1,36 @@
+.section-wrapper {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  .section-inner {
+    margin: var(--content-margin);
+    padding: var(--default-content-padding);
+    
+    & :first-child {
+      margin-top: 0;
+    }
+    & :last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &.isDark {
+    * {
+      color: var(--color-white);
+      text-shadow: var(--text-shadow);
+    }
+  }
+
+  &.inContainer {
+    .section-inner {
+      max-width: var(--max-content-width);
+    }
+  }
+  &.isNarrow {
+    .section-inner {
+      max-width: var(--narrow-content-width);
+    }
+  }
+}
+

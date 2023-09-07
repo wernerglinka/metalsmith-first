@@ -1,0 +1,54 @@
+<meta name="verify-v1" content="{{ site.validate.google }}">
+<meta name="msvalidate.01" content="{{ site.validate.ms }}" />
+<meta name="generator" value="metalsmith">
+
+<meta charset="utf-8"/>
+<meta name="HandheldFriendly" content="True"/>
+<meta name="MobileOptimized" content="320"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta httpEquiv="cleartype" content="on"/>
+<meta httpEquiv="Accept-CH" content="DPR, Viewport-Width, Width"/>
+
+<title>{{ seo.title }}</title>
+<meta name="description" content="{{ seo.description }}"/>
+<meta name="author" content="Werner Glinka"/>
+<meta name="generator" content="metalsmith"/>
+
+{# Icons #}
+{# generated at https://realfavicongenerator.net/ #}
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+<link rel="manifest" href="/assets/icons/site.webmanifest">
+<link rel="mask-icon" href="/assets/icons/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="/assets/icons/favicon.ico">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="msapplication-config" content="/assets/icons/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+
+{# social tags #}
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:site" content="@wernerglinka"/>
+<meta name="twitter:domain" content="{{ metadata.site.siteURL }}"/>
+<meta name="twitter:url" content="{{ metadata.site.siteURL ~ path }}"/>
+<meta name="twitter:title" content="{{ seo.title }}"/>
+<meta name="twitter:description" content="{{ seo.description }}"/>
+<meta name="twitter:creator" content="@wernerglinka"/>
+<meta name="twitter:image" content="{{ seo.socialImage }}"/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:type" content="article"/>
+<meta property="og:title" content="{{ seo.title }}"/>
+<meta property="og:description" content="{{ seo.description }}"/>
+<meta property="og:url" content="{{ metadata.site.siteURL ~ path }}"/>
+<meta property="og:site_name" content="{{ metadata.site.siteOwner }}"/>
+<meta property="og:image" content="{{ seo.socialImage }}"/>
+<meta property="og:updated_time" content="{{ date }}"}/>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" media="screen,print" href="https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans:wght@300;500&display=swap" >
+
+<link rel="stylesheet" media="screen" href="/assets/styles.css">
+
+{# Include page schema #}
+{% include "../schemas/index.njk" %}

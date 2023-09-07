@@ -1,0 +1,80 @@
+:root {
+  --content-width: 100%;
+  --max-content-width: 120rem;
+  --content-margin: 0 auto;
+  --narrow-content-width: 80rem;
+
+  --header-height: clamp(6rem, 3.0000rem + 7.5000vw, 12rem);
+  --logo-size: clamp(4rem, 1.0000rem + 7.5000vw, 10rem);
+
+  /**
+    * Default padding for containers and sections
+    * Padding is fluid between the min and max viewport widths
+    * min: 40rem
+    * max: 120rem
+    */
+  --default-content-padding: clamp(2rem, 1.0000rem + 2.5000vw, 4rem);
+
+  /**
+    * Colors
+    * Palette found on https://coolors.co/palettes
+    */
+  --color-none: transparent;
+  --color-primary: #202020;
+  --color-primary-complement: #dfdfdf;
+  --color-secondary: #3f3f3f;
+  --color-secondary-complement: #c0c0c0;
+  --color-tertiary: #707070;
+  --color-tertiary-complement: #8f8f8f;
+  --color-highlight: #ffdf6c;
+  --color-highlight-complement: #002093;
+  --color-white: #fff;
+  --color-gray: #e5e5e5;
+  --color-black: #000;
+  --color-link: #932432;
+  --color-link-hover: #de354c;
+
+  --color-very-dark-translucent: rgba(0, 0, 0, 0.9);
+  --color-dark-translucent: rgba(0, 0, 0, 0.5);
+  --color-light-translucent: rgba(0, 0, 0, 0.2);
+
+  --text-shadow: text-shadow: 0px 0px 4px rgba(128, 0, 0, 0.5);
+
+  /**
+    * Typography
+    * Fonts are loaded from Google Fonts
+    * Common Typographic Scale Ratios:
+    *  1.200 — Minor Third
+    *  1.067 — Minor Second
+    *  1.125 — Major Second
+    *  1.200 — Minor Third
+    *  1.250 — Major Third
+    *  1.333 — Perfect Fourth
+    *  1.414 — Augmented Fourth
+    *  1.500 — Perfect Fifth
+    *  1.618 — The Golden Ratio
+    *  
+    *  Rem value: 1rem = 10px
+    *
+    *  Min screen width: 400px;
+    *  Maxscreen width: 1200px;
+    *
+    * Calculated with: https://www.fluid-type-scale.com/
+    *
+    * Sources: 
+    *   - https://www.type-scale.com/
+    *   - https://css-clamp-calculator.netlify.app/
+    *   - https://blog.logrocket.com/fluid-vs-responsive-typography-css-clamp/
+    */
+  --body-fonts: "Open Sans", helvetica, arial, sans-serif;
+  --heading-fonts: "Montserrat", sans-serif;
+
+  --font-size-sm: clamp(1.28rem, 0.18vw + 1.21rem, 1.43rem);
+  --font-size-base: clamp(1.6rem, 0.38vw + 1.45rem, 1.9rem);
+  --font-size-md: clamp(2rem, 0.67vw + 1.73rem, 2.53rem);
+  --font-size-lg: clamp(2.5rem, 1.1vw + 2.06rem, 3.38rem);
+  --font-size-xl: clamp(3.13rem, 1.72vw + 2.44rem, 4.5rem);
+  --font-size-xxl: clamp(3.91rem, 2.62vw + 2.86rem, 6rem);
+  --font-size-xxxl: clamp(4.88rem, 3.89vw + 3.33rem, 8rem);
+
+}

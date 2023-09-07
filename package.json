@@ -1,0 +1,55 @@
+{
+  "name": "start-here",
+  "version": "0.0.1",
+  "description": "The Metalsmith First starter kit",
+  "keywords": [
+    "metalsmith",
+    "starter",
+    "metalsmith first"
+  ],
+  "author": "werner@glinka.co",
+  "license": "MIT",
+  "scripts": {
+    "start": "cross-env NODE_ENV=development DEBUG=@metalsmith* node metalsmith.js",
+    "build": "cross-env NODE_ENV=production node metalsmith.js",
+    "serve": "browser-sync start --server 'build'"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.29.3",
+    "cross-env": "^7.0.3",
+    "cssnano": "^6.0.1",
+    "eslint": "^8.48.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-import": "^2.28.1",
+    "eslint-plugin-prettier": "^5.0.0",
+    "postcss-import": "^15.1.0",
+    "prettier": "^3.0.3"
+  },
+  "dependencies": {
+    "@metalsmith/drafts": "^1.3.0",
+    "@metalsmith/js-bundle": "^0.5.0",
+    "@metalsmith/layouts": "^2.7.0",
+    "@metalsmith/markdown": "^1.10.0",
+    "@metalsmith/metadata": "^0.3.0",
+    "@metalsmith/permalinks": "^2.5.1",
+    "@swup/a11y-plugin": "^4.3.0",
+    "@swup/body-class-plugin": "^3.1.1",
+    "@swup/head-plugin": "^2.1.1",
+    "jstransformer-nunjucks": "^1.2.0",
+    "marked": "^8.0.1",
+    "metalsmith": "^2.6.1",
+    "metalsmith-html-minifier": "^4.0.1",
+    "metalsmith-if": "^0.1.1",
+    "metalsmith-prism": "^4.2.2",
+    "metalsmith-robots": "^1.1.0",
+    "metalsmith-sitemap": "^1.2.2",
+    "metalsmith-static-files": "^0.3.0",
+    "postcss": "^8.4.29",
+    "postcss-preset-env": "^9.1.3",
+    "swup": "^4.3.4"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

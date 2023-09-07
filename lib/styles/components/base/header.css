@@ -1,0 +1,38 @@
+.header-wrapper {
+  height: var(--header-height);
+  width: 100%;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  width: 100%;
+  height: var(--header-height);
+  background-color: var(--color-gray);
+
+  & .container {
+    padding: 0 var(--default-content-padding);
+  }
+
+  & .brand {
+    position: relative;
+    top: 1rem;
+    z-index: 10001;
+    width: var(--logo-size);
+    height: var(--logo-size);
+    animation: welcome 3s ease-in-out;
+  }
+}
+
+@keyframes welcome {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}

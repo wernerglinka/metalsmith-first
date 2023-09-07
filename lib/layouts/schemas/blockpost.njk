@@ -1,0 +1,46 @@
+{
+    "@context": "https://schema.org/",
+    "@type": "Blog",
+    "@id": "https://glinka.co/blog",
+    "mainEntityOfPage": "https://glinka.co/blog",
+    "name": "Werner Glinka's Blog'",
+    "description": "Random Notes to Myself about my projects which include Metalsmith, a static site generator and the use of structured content.",
+    "publisher": {
+        "@type": "Organization",
+        "@id": "https://glinka.co",
+        "name": "Werner Glinka",
+        "logo": {
+            "@type": "ImageObject",
+            "@id": "https://glinka.co/assets/images/werner-glinka-logo.png",
+            "url": "https://glinka.co/assets/images/werner-glinka-logo.png",
+            "width": "1000",
+            "height": "100"
+        }
+    },
+    "blogPost": [
+        {
+            "@type": "BlogPosting",
+            "@id": "{{ metadata.site.siteURL ~ path }}",
+            "mainEntityOfPage": "{{ metadata.site.siteURL ~ path }}",
+            "headline": "{{ seo.title}}",
+            "name": "{{ seo.title }}",
+            "description": "{{ seo.description }}",
+            "datePublished": "{{ date }}",
+            "dateModified": "{{ date }}",
+            "author": {
+                "@type": "Person",
+                "@id": "https://glinka.co",
+                "name": "Werner Glinka"
+            },
+            "image": {
+                "@type": "ImageObject",
+                "@id": "{{ seo.socialImage}}",
+                "url": "{{ seo.socialImage}}",
+                "height": "",
+                "width": ""
+            },
+            "url": "{{ metadata.site.siteURL ~ path }}",
+            "keywords": []
+        }
+    ]
+}
