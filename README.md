@@ -3,6 +3,8 @@
 </p>
 
 <h1 align="center">Metalsmith First</h1>
+
+[![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square&label=license)](http://opensource.org/licenses/MIT)
   
 Metalsmith First is a starter for Metalsmith, a well-established static site generator that has been a staple in my web development toolkit for years. This tool is particularly adept at crafting static websites, which have stood the test of time in the ever-evolving web development landscape.
 
@@ -36,3 +38,9 @@ npm start
 ```
 
 This command will initiate a development server and load the homepage, allowing you to easily embark on your web development journey. Feel free to explore and adapt the provided resources to suit your specific project needs. You are now free to roam about the cabin ;-)
+
+## License
+Code released under [the MIT license](https://github.com/wernerglinka/metalsmith-first/blob/master/LICENSE).
+
+[license-badge]: https://img.shields.io/github/license/wernerglinka/metalsmith-first
+[license-url]: LICENSE
