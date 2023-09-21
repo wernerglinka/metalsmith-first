@@ -52,9 +52,9 @@ sections:
         - Swup for cool page transitions and faster loads.
 
         ### Oh, and One More Thing
-        There's this tool I made called [Metalsmith Start](https://github.com/wernerglinka/ms-start/). It's a CLI utility that helps set up your frontmatter. Gives you a head start.
+        There's this tool I made called [Metalsmith Start](https://github.com/wernerglinka/ms-start/). It's a CLI utility that helps set up your frontmatter. Gives you a head start. If you want to learn more about the sections that are available, check out the [MS-Start Documentation](https://ms-start-docs.netlify.app/) site.
 
-        But if you're not into that, no worries. Just make a new page in `src` and slap on the frontmatter you need. For all the nitty-gritty, check the [Metalsmith Components](https://metalsmith-components.netlify.app/) docs.
+        But if you're not into that, no worries. Just make a new page in `src` and slap on the frontmatter you need.
 
 
 
