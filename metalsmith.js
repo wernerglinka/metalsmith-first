@@ -18,34 +18,38 @@ const browserSync = require('browser-sync');
 
 const mypostcss = require("./local_modules/mypostcss/index.js");
 
-const engineOptions = {
-  path: ["lib/layouts"],
-  filters: require("./nunjucks-filters")
-};
-
 const isProduction = process.env.NODE_ENV === 'production';
 let devServer = null;
 
 /**
- * Function metadataFilesObject
- * @returns {Object} An object with the file name as the key and the file path as the value
+ * Function dataToNunjucksGlobals
+ * @returns {Object} An object of objects with the file name as the key and the file content as the value
  * 
  * This function will allow us to add metadata files to the build process programmatically.
  */
-const metadataFilesObject = () => {
-  // read all file names in the lib/data directory
+const dataToNunjucksGlobals = () => {
   const fs = require('fs');
   const path = require('path');
   const dataDir = path.join(__dirname, 'lib', 'data');
   const files = fs.readdirSync(dataDir);
-  // return an object with the file name as the key and the file path as the value
   return files.reduce((obj, file) => {
-    const filePath = `lib/data/${file}`;
     const fileName = file.replace('.json', '');
-    obj[fileName] = filePath;
+    const fileContents = fs.readFileSync(path.join(dataDir, file), 'utf8');
+    obj[fileName] = JSON.parse(fileContents);
     return obj;
   }, {});
 }
+
+/**
+ * engineOptions
+ * @type {Object}
+ * @description This object is passed to the layouts plugin and allows us to pass options to the Nunjucks templating engine.
+ */
+const engineOptions = {
+  path: ["lib/layouts"],
+  filters: require("./nunjucks-filters"),
+  globals: dataToNunjucksGlobals()
+};
 
 function msBuild() {
   return (
@@ -64,9 +68,6 @@ function msBuild() {
 
       //Ignore drafts in production
       .use(when(isProduction, drafts()))
-
-      // Add metadata from JSON files
-      .use( metadata(metadataFilesObject()))
 
       .use(markdown())
 

@@ -58,7 +58,7 @@
       {% set params = section %}
 
       {# name determines which section is rendered #}
-      {{ component(name, params, site) }}
+      {{ component(name, params) }}
     </{{section.container}}>
   {% endfor %}
 {% endblock %}
