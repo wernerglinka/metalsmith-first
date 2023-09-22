@@ -48,7 +48,7 @@ const dataToNunjucksGlobals = () => {
 const engineOptions = {
   path: ["lib/layouts"],
   filters: require("./nunjucks-filters"),
-  globals: dataToNunjucksGlobals()
+  globals: {refData: dataToNunjucksGlobals()}
 };
 
 function msBuild() {
