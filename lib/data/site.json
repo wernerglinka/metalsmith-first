@@ -1,18 +1,17 @@
 {
-  "site" : {
-    "title": "site title",
-    "description": "site descrption",
-    "author": "site email",
-    "siteURL": "",
-    "siteOwner": "site owner name",
-    "validate": {
-      "google": "",
-      "ms": ""
-    },
-    "social": {
-      "linkedIn": "",
-      "github": ""
-    },
-    "socialImage": ""
-  }
+  "title": "site title",
+  "description": "site descrption",
+  "author": "site email",
+  "siteURL": "",
+  "siteOwner": "site owner name",
+  "validate": {
+    "google": "",
+    "ms": ""
+  },
+  "social": {
+    "linkedIn": "",
+    "github": ""
+  },
+  "socialImage": ""
 }
+

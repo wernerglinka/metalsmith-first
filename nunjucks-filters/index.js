@@ -27,8 +27,8 @@ const filterList = (list, selections) => {
   const filterredList = [];
   for (let i = 0; i < list.length; i++) {
     for (let j = 0; j < selections.length; j++) {
-      if (list[i].item === selections[j].item) {
-        filterredList.push(list[i]);
+      if (list[i].title === selections[j].title) {
+        filterredList.push(list[i]);title
       }
     }
   }
