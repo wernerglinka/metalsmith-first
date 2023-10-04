@@ -1,0 +1,23 @@
+{% macro text(props) %}
+  {% if props.text.prefix %}
+    <p class="prefix">{{ section.text.prefix }}</p>
+  {% endif %}
+
+  {% if props.text.title %}
+    {% if props.text.header === "h1" %}
+      <h1 class="title">{{ props.text.title }}</h1>
+    {% elif props.text.header === "h2" %}
+      <h2 class="title">{{ props.text.title }}</h2>
+    {% else %}
+      <h3 class="title">{{ props.text.title }}</h3>
+    {% endif %}
+  {% endif %}
+
+  {% if props.text.subtitle %}
+    <p class="sub-title">{{ props.text.subtitle }}</p>
+  {% endif %}
+
+  {% if props.text.prose %}
+    <div class="prose">{{ props.text.prose | mdToHTML | safe }}</div>
+  {% endif %}
+{% endmacro %}

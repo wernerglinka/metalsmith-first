@@ -1,48 +1,44 @@
 {#
   Text
-  Renders text
+  Renders text with optional CTAs
   
   params: {
-    prefix: string - prefix to the title (optional)
-    title: string - title of the blog post (optional)
-    header: string - header of the blog post, e.g. "h1", "h2", etc. (optional)
-    subtitle: string - subtitle of the blog post (optional)
-    prose: string - prose of the blog post (optional)
+    text: {
+      prefix: string - prefix to the title (optional)
+      title: string - title of the blog post (optional)
+      header: string - header of the blog post, e.g. "h1", "h2", etc. (optional)
+      subtitle: string - subtitle of the blog post (optional)
+      prose: string - prose of the blog post (optional)
+    }
+    ctas: {
+      url: "",
+      label: "",
+      isExternal: true,
+      isButton: true,
+      buttonStyle: "primary"
+    }
   }
 
   YAML example:
+  hasCtas: false
   text:
-      prefix: ""
-      title: ""
-      header: ""
-      subtitle: ""
-      prose: ""
+    prefix: ""
+    title: ""
+    header: ""
+    subtitle: ""
+    prose: ""
+  ctas:
+    - url: ""
+      label: ""
+      isExternal: true
+      isButton: true
+      buttonStyle: "primary"
 #}
 
-
+{% from "sections/particles/text.njk" import text %}
+{% from "sections/particles/ctas.njk" import ctas %}
 
 <div class="text-wrapper section-inner">
-
-  {% if params.text.prefix %}
-    <p class="prefix">{{ params.text.prefix }}</p>
-  {% endif %}
-
-  {% if params.text.title %}
-    {% if params.text.header === "h1" %}
-      <h1 class="title">{{ params.text.title }}</h1>
-    {% elif params.text.header === "h2" %}
-      <h2 class="title">{{ params.text.title }}</h2>
-    {% else %}
-      <h3 class="title">{{ params.text.title }}</h3>
-    {% endif %}
-  {% endif %}
-
-  {% if params.text.subtitle %}
-    <p class="sub-title">{{ params.text.subtitle }}</p>
-  {% endif %}
-
-  {% if params.text.prose %}
-    <div class="prose">{{ params.text.prose | mdToHTML | safe }}</div>
-  {% endif %}
-
+  {{ text(params) }}
+  {{ ctas(params) }}
 </div>
