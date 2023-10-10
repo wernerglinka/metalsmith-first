@@ -40,6 +40,11 @@ const toArray = (string) => {
   return [...new Set(string.trim().split(" "))].sort();
 };
 
+// turn a json object into a string
+const objToString = (obj) => {
+  return JSON.stringify(obj);
+};
+
 const dump = obj => {
   const getCircularReplacer = () => {
     const seen = new WeakSet();
@@ -76,5 +81,6 @@ module.exports = {
   getSelections,
   toArray,
   dump,
-  isRelated
+  isRelated,
+  objToString
 };
