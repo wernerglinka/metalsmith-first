@@ -58,7 +58,7 @@
       {% set params = section %}
 
       {# name determines which section is rendered #}
-      {% if name == "blog-header" %}
+      {% if name == "blog-banner" %}
         {% set blogProps = { author: author, date: date } %}
         {{ component(name, params, blogProps) }}
       {% else %}
