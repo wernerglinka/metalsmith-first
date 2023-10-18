@@ -10,7 +10,7 @@ header {
   z-index: 1000;
   width: 100%;
   height: var(--header-height);
-  background-color: var(--color-gray);
+  background-color: var(--header-background-color);
 
   & .container {
     padding: 0 var(--default-content-padding);
