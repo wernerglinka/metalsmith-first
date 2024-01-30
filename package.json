@@ -12,7 +12,7 @@
   "license": "MIT",
   "scripts": {
     "start": "cross-env NODE_ENV=development DEBUG=@metalsmith* node metalsmith-dev.js",
-    "build": "cross-env NODE_ENV=production node metalsmith.js",
+    "build": "cross-env NODE_ENV=production node metalsmith-prod.js",
     "serve": "browser-sync start --server 'build'"
   },
   "devDependencies": {

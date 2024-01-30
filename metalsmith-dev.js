@@ -1,12 +1,13 @@
 /* eslint-disable import/no-extraneous-dependencies */
-
 import { performance } from 'perf_hooks';
 import browserSync from 'browser-sync';
+
 import { msBuild } from './metalsmith.js';
 
 let devServer = null;
 let t1 = performance.now();
 const ms = msBuild();
+
 ms.build( err => {
   if ( err ) {
     throw err;

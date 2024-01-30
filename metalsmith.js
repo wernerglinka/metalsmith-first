@@ -6,11 +6,8 @@ import { dirname } from 'node:path';
 import Metalsmith from "metalsmith";
 import markdown from "@metalsmith/markdown";
 import layouts from "@metalsmith/layouts";
-import drafts from "@metalsmith/drafts";
 import esbuild from "@metalsmith/js-bundle";
 import permalinks from "@metalsmith/permalinks";
-import when from "metalsmith-if";
-import htmlMinifier from "metalsmith-html-minifier";
 import assets from "metalsmith-static-files";
 import sitemap from 'metalsmith-sitemap';
 import robots from 'metalsmith-robots';
@@ -23,13 +20,13 @@ import * as fs from 'fs';
 const dependencies = JSON.parse( fs.readFileSync( './package.json' ) ).dependencies;
 
 const __dirname = dirname( fileURLToPath( import.meta.url ) );
-const isProduction = process.env.NODE_ENV === 'production';
 
 /**
- * Function dataToNunjucksGlobals
- * @returns {Object} An object of objects with the file name as the key and the file content as the value
+ * @function dataToNunjucksGlobals
+ * @returns {Object} An object of objects with the file name as the key and
+ *  the file content as the value
  * 
- * This function will allow us to add metadata files to the build process programmatically.
+ * This function adds metadata files to the build process programmatically.
  */
 const dataToNunjucksGlobals = () => {
   const dataDir = path.join( __dirname, 'lib', 'data' );
@@ -46,7 +43,8 @@ const dataToNunjucksGlobals = () => {
 /**
  * engineOptions
  * @type {Object}
- * @description This object is passed to the layouts plugin and allows us to pass options to the Nunjucks templating engine.
+ * @description This object is passed to the layouts plugin and allows us to
+ *  pass options to the Nunjucks templating engine.
  */
 import * as nunjucksFilters from './nunjucks-filters/index.js';
 
@@ -58,12 +56,14 @@ const engineOptions = {
 };
 
 export function msBuild() {
+  const isProduction = process.env.NODE_ENV === 'production';
+
   return (
     Metalsmith( __dirname )
       .clean( true )
       .ignore( [ '**/.DS_Store', 'lib/assets/styles.css', 'lib/assets/styles.css.map' ] )
       .watch( isProduction ? false : [ 'src', 'lib' ] )
-      //.env('DEBUG', process.env.DEBUG)
+      //.env( 'DEBUG', process.env.DEBUG )
       .env( 'NODE_ENV', process.env.NODE_ENV )
       .source( "./src" )
       .destination( "./build" )
@@ -71,9 +71,6 @@ export function msBuild() {
         msVersion: dependencies.metalsmith,
         nodeVersion: process.version,
       } )
-
-      //Ignore drafts in production
-      .use( when( isProduction, drafts() ) )
 
       .use( markdown() )
 
@@ -119,8 +116,6 @@ export function msBuild() {
         "sitemap": "https://www.example.com/sitemap.xml"
       } ) )
 
-      .use( when( isProduction, htmlMinifier() ) )
-
       .use( sitemap( {
         hostname: 'https://www.example.com',
         omitIndex: true,
@@ -136,10 +131,3 @@ export function msBuild() {
       } ) )
   );
 };
-
-const ms = msBuild();
-ms.build( err => {
-  if ( err ) {
-    throw err;
-  };
-} );
